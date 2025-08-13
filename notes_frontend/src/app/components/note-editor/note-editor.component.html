@@ -1,0 +1,20 @@
+<section class="editor" *ngIf="_note() as n; else empty">
+  <div class="editor-header">
+    <input class="title" type="text" placeholder="Title" [(ngModel)]="n.title" />
+    <div class="toolbar">
+      <label class="star-toggle">
+        <input type="checkbox" [(ngModel)]="n.starred" />
+        <span class="star" [class.active]="n.starred">★</span>
+        <span>Star</span>
+      </label>
+      <button class="btn" (click)="onCancel()">Cancel</button>
+      <button class="btn primary" (click)="onSave()">Save</button>
+    </div>
+  </div>
+  <textarea class="content" placeholder="Write your note..." [(ngModel)]="n.content" rows="20"></textarea>
+</section>
+<ng-template #empty>
+  <div class="empty">
+    Select a note to start editing or create a new one.
+  </div>
+</ng-template>
