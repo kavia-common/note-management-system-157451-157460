@@ -1,0 +1,12 @@
+<aside class="sidebar">
+  <nav>
+    <button class="nav-item" [class.active]="active() === 'all'" (click)="setActive('all')">
+      <span class="dot all"></span>
+      All notes
+    </button>
+    <button class="nav-item" [class.active]="active() === 'starred'" (click)="setActive('starred')">
+      <span class="dot starred"></span>
+      Starred
+    </button>
+  </nav>
+</aside>

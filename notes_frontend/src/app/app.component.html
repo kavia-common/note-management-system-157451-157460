@@ -1,0 +1,19 @@
+<app-header (searchChange)="onSearchChange($event)" (createNew)="onCreateNew()"></app-header>
+
+<div class="layout">
+  <app-sidebar class="side" (filterChange)="onFilterChange($event)"></app-sidebar>
+  <app-notes-list
+    class="list"
+    [notes]="filtered()"
+    [selectedId]="selected?.id"
+    (select)="onSelectNote($event)"
+    (remove)="onDeleteNote($event)"
+    (toggleStar)="onToggleStar($event)"
+  ></app-notes-list>
+  <app-note-editor
+    class="editor"
+    [note]="selected"
+    (save)="onSaveNote($event)"
+    (cancel)="onCancelEdit()"
+  ></app-note-editor>
+</div>

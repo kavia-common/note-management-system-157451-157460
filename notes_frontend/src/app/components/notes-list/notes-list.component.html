@@ -1,0 +1,25 @@
+<section class="list">
+  <div
+    class="item"
+    *ngFor="let n of ordered()"
+    [class.selected]="n.id === selectedId"
+    (click)="onSelect(n)"
+  >
+    <div class="item-head">
+      <h4 class="title">{{ n.title || 'Untitled' }}</h4>
+      <div class="actions">
+        <button class="icon-btn" (click)="onToggleStar(n, $event)" [title]="n.starred ? 'Unstar' : 'Star'">
+          <span class="star" [class.active]="n.starred">★</span>
+        </button>
+        <button class="icon-btn danger" (click)="onDelete(n, $event)" title="Delete note">✕</button>
+      </div>
+    </div>
+    <p class="preview">{{ excerpt(n.content) }}</p>
+    <div class="meta">
+      <span>{{ n.updatedAt || n.createdAt | date:'medium' }}</span>
+    </div>
+  </div>
+  <div class="empty" *ngIf="ordered().length === 0">
+    No notes found.
+  </div>
+</section>

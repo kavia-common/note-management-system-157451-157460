@@ -1,0 +1,20 @@
+<header class="app-header">
+  <div class="brand">
+    <span class="logo-dot"></span>
+    <span class="brand-text">Notes</span>
+  </div>
+  <div class="search">
+    <input
+      type="text"
+      [value]="searchText()"
+      (input)="onSearchInput(($any($event.target)).value)"
+      placeholder="Search notes..."
+      aria-label="Search notes"
+    />
+  </div>
+  <div class="actions">
+    <button class="btn accent" (click)="onCreate()" aria-label="Create new note">
+      + New Note
+    </button>
+  </div>
+</header>

@@ -1,0 +1,51 @@
+.sidebar {
+  width: 240px;
+  padding: 16px;
+  border-right: 1px solid var(--border-color);
+  background: var(--bg);
+  height: calc(100vh - 56px);
+  position: sticky;
+  top: 56px;
+}
+
+nav {
+  display: grid;
+  gap: 6px;
+}
+
+.nav-item {
+  height: 36px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 0 10px;
+  border: none;
+  border-radius: 8px;
+  background: transparent;
+  color: var(--text-primary);
+  cursor: pointer;
+  text-align: left;
+}
+
+.nav-item:hover {
+  background: var(--hover);
+}
+
+.nav-item.active {
+  background: color-mix(in srgb, var(--color-primary) 10%, transparent);
+  color: var(--color-primary);
+}
+
+.dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+}
+
+.dot.all {
+  background: var(--color-primary);
+}
+
+.dot.starred {
+  background: var(--color-accent);
+}
